@@ -149,7 +149,7 @@
                     font-weight: 500;
                     font-size: 18px;
                     color: $deepskyblue;
-                    padding: 0 13px;
+                    padding: 0 12px;
                     @media (max-width: 768px) {
                         font-size: 14px;
                     }
@@ -313,9 +313,21 @@
                     color: $deepskyblue;
                     padding: 12px 10px;
                     text-decoration: none;
+                    position: relative;
                     &:hover,
                     &.active {
                         color: $green;
+                        padding-left: 11px;
+                        &::before {
+                            content: '';
+                            display: inline;
+                            width: 3px;
+                            height: 20px;
+                            background-color: $yellow;
+                            border-radius: 3px;
+                            position: absolute;
+                            left: 0;
+                        }
                     }
                 }
             }
@@ -425,4 +437,138 @@
         .pb-108px {
             padding-bottom: 32px;
         }
+    }
+    
+    .switch {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        background-color: $white;
+        border-radius: 9px;
+    }
+    
+    .current {
+        text-transform: uppercase;
+        position: relative;
+        z-index: 1;
+        font-weight: 500;
+        font-size: 14px;
+        text-align: center;
+        display: flex;
+        color: $deepskyblue;
+        transition: all .2s ease-out;
+        span {
+            display: inline-block;
+            padding: 8px 7px;
+        }
+        .arrow {
+            padding: 8px 7px;
+            border-left: 1px solid $deepskyblue;
+            &::after {
+                display: inline-block;
+                font-family: 'icomoon';
+                content: "\e902";
+                color: $deepskyblue;
+                font-size: 10px;
+            }
+        }
+        &:hover {
+            background-color: rgba(0, 0, 0, .1);
+        }
+    }
+    
+    .options {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0;
+        opacity: 0;
+        transition: all .36s ease-out;
+        display: none;
+        overflow: hidden;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        border-radius: 9px;
+        .switch.show-options & {
+            display: block;
+            z-index: 5;
+        }
+        .switch.anim-options & {
+            opacity: 1;
+        }
+        .switch.show-shadow & {
+            box-shadow: 0px 20px 40px rgba(73, 115, 235, 0.1)!important;
+        }
+    }
+    
+    .options-list {
+        color: $deepskyblue;
+        margin: 0;
+        padding: 0 14px;
+        position: relative;
+        z-index: 5;
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            padding: 10px;
+            border-bottom: 1px solid rgba(73, 115, 235, 0.17);
+            transform: translateX(10px);
+            transition: all .24s ease-out;
+            transition-delay: .1s;
+            opacity: 0;
+            font-weight: 500;
+            font-size: 14px;
+            color: $deepskyblue;
+            white-space: nowrap;
+            &:last-child {
+                border-bottom: none;
+            }
+            &:nth-child(1) {
+                transition-delay: .1s;
+            }
+            &:nth-child(2) {
+                transition-delay: .15s;
+            }
+            &:nth-child(3) {
+                transition-delay: .2s;
+            }
+            &:nth-child(4) {
+                transition-delay: .25s;
+            }
+            &:nth-child(5) {
+                transition-delay: .3s;
+            }
+            &.selected {
+                color: $deepskyblue;
+            }
+            .switch.anim-options & {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    }
+    
+    #trans-circle {
+        $size: 80px;
+        width: $size;
+        height: $size;
+        position: absolute;
+        top: -$size;
+        right: -$size;
+        padding: 0;
+        margin: 0;
+        border: none;
+        z-index: 1;
+        transition: all .4s ease-out;
+        transform: scale(.5);
+        overflow: hidden;
+        svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    
+    .switch.anim-options #trans-circle {
+        transform: scale(9);
     }
