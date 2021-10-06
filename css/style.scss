@@ -1,0 +1,409 @@
+    @import "./bootstrap.min.css";
+    @import "./owl.carousel.min.css";
+    @import "fonts.css";
+    @import "variables";
+    body {
+        font-family: 'Poppins';
+        background: url('../images/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    p {
+        padding: 0;
+        margin: 0;
+    }
+    
+    a {
+        cursor: pointer;
+    }
+    
+    .btn-success {
+        font-weight: 600;
+        font-size: 16px;
+        padding: 15px 35px;
+        color: $white;
+        background: $green;
+        border-radius: 16px;
+        border: none;
+    }
+    
+    .btn-check:focus+.btn-success,
+    .btn-success:focus {
+        box-shadow: none!important;
+    }
+    
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                font-weight: 500;
+                font-size: 16px;
+                color: $white;
+                padding: 36px 24px;
+                span {
+                    position: relative;
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 0;
+                        bottom: 0;
+                        left: 0;
+                        height: 2px;
+                        background-color: $yellow;
+                        transition: 0.2s ease-out;
+                        top: 28px;
+                    }
+                }
+                &.active,
+                &:focus,
+                &:hover {
+                    span {
+                        color: $yellow;
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                    padding: 24px 12px;
+                }
+            }
+        }
+    }
+    
+    .list-items {
+        padding-left: 0;
+        li {
+            font-weight: 500;
+            font-size: 16px;
+            color: $black;
+            list-style-type: none;
+            padding-bottom: 8px;
+        }
+    }
+    
+    .card {
+        background: $white;
+        box-shadow: 0px 20px 40px rgba(73, 115, 235, 0.1);
+        border-radius: 20px;
+        border: none;
+        .card-body {
+            padding: 32px 34px;
+            .card-title {
+                font-weight: 500;
+                font-size: 32px;
+                color: $black;
+            }
+        }
+    }
+    
+    iframe {
+        width: 60%;
+        min-height: 165px;
+    }
+    
+    .iframe-wrapper {
+        min-height: 165px;
+    }
+    
+    .progress {
+        background-color: $whitesmoke;
+        border-radius: 60px;
+        .progress-bar {
+            border-radius: 60px;
+            &.green {
+                background-color: $green;
+            }
+            &.yellow {
+                background-color: $yellow;
+            }
+        }
+    }
+    
+    .nav-pills .nav-link {
+        color: $deepskyblue;
+        font-size: 14px;
+        padding: 12px;
+        text-align: start;
+    }
+    
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+        background-color: transparent;
+        color: $green;
+        font-weight: 600;
+    }
+    
+    .footer {
+        .navbar-nav {
+            .nav-item {
+                .nav-link {
+                    font-weight: 500;
+                    font-size: 18px;
+                    color: $deepskyblue;
+                    padding: 0 13px;
+                    @media (max-width: 768px) {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .progress-custom.progress {
+        width: 150px;
+        height: 150px !important;
+        float: left;
+        line-height: 150px;
+        background: none;
+        margin: 20px;
+        box-shadow: none;
+        position: relative;
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 10px solid $whitesmoke;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &>span {
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+        }
+    }
+    
+    .progress-custom.progress .progress-left {
+        left: 0
+    }
+    
+    .progress-custom.progress .progress-bar {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border-width: 10px;
+        border-style: solid;
+        position: absolute;
+        top: 0;
+        border-radius: 0;
+    }
+    
+    .progress-custom.progress .progress-left .progress-bar {
+        left: 100%;
+        border-top-right-radius: 80px;
+        border-bottom-right-radius: 80px;
+        border-left: 0;
+        -webkit-transform-origin: center left;
+        transform-origin: center left
+    }
+    
+    .progress-custom.progress .progress-right {
+        right: 0
+    }
+    
+    .progress-custom.progress .progress-right .progress-bar {
+        left: -100%;
+        border-top-left-radius: 80px;
+        border-bottom-left-radius: 80px;
+        border-right: 0;
+        -webkit-transform-origin: center right;
+        transform-origin: center right;
+        animation: loading-1 1.8s linear forwards
+    }
+    
+    .progress-custom.progress .progress-value {
+        width: 90%;
+        height: 90%;
+        border-radius: 50%;
+        background: transparent;
+        font-size: 14px;
+        color: $black;
+        line-height: 135px;
+        text-align: center;
+        position: absolute;
+        top: 5%;
+        left: 5%
+    }
+    
+    .progress-custom.progress.green .progress-bar {
+        border-color: $green;
+    }
+    
+    .progress-custom.progress.green .progress-left .progress-bar {
+        animation: loading-2 1.5s linear forwards 1.8s
+    }
+    
+    @keyframes loading-1 {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
+        }
+        100% {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg)
+        }
+    }
+    
+    @keyframes loading-2 {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
+        }
+        100% {
+            -webkit-transform: rotate(144deg);
+            transform: rotate(144deg)
+        }
+    }
+    
+    @keyframes loading-3 {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
+        }
+        100% {
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg)
+        }
+    }
+    
+    .tabs-wrapper {
+        background-color: $white;
+        border-radius: 20px;
+        box-shadow: 0px 20px 40px rgba(73, 115, 235, 0.1)!important;
+        padding: 50px 60px;
+        @media (max-width: 768px) {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0 15px;
+        }
+    }
+    
+    .tabs {
+        ul {
+            margin: 0;
+            padding: 0 0 1em 0;
+            font-weight: bold;
+            li {
+                background: transparent;
+                a {
+                    color: $deepskyblue;
+                    padding: 12px 10px;
+                    text-decoration: none;
+                    &:hover,
+                    &.active {
+                        color: $green;
+                    }
+                }
+            }
+        }
+    }
+    
+    .item {
+        margin-bottom: 8px;
+        border-radius: 12px;
+        background-color: $white;
+        &::before {
+            cursor: pointer;
+            font-weight: normal;
+            font-size: 16px;
+            background-color: $white;
+            border-radius: 12px;
+            color: $deepskyblue;
+            padding: 18px 14px;
+            display: block;
+        }
+        &.active {
+            &::before {
+                font-weight: 600;
+                color: $green;
+            }
+            .item-content {
+                padding: 0 30px;
+                -webkit-transition: opacity 0.3s ease-in-out;
+                -moz-transition: opacity 0.3s ease-in-out;
+                -o-transition: opacity 0.3s ease-in-out;
+                -ms-transition: opacity 0.3s ease-in-out;
+                transition: opacity 0.3s ease-in-out;
+            }
+        }
+    }
+    
+    @media all and (min-width: 768px) {
+        .item {
+            &.active {
+                .item-content {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+    
+    .tabbed-content {
+        min-height: 740px;
+        .tabs {
+            display: none;
+        }
+        .item {
+            &::before {
+                content: attr(data-title);
+            }
+            .item-content {
+                opacity: 0;
+                visibility: hidden;
+                height: 0;
+            }
+            &.active {
+                .item-content {
+                    opacity: 1;
+                    visibility: visible;
+                    height: auto;
+                }
+            }
+        }
+    }
+    
+    @media all and (min-width: 768px) {
+        .tabbed-content {
+            min-height: 740px;
+            .tabs {
+                display: block;
+                li {
+                    display: inline-block;
+                    a {
+                        display: block;
+                    }
+                }
+            }
+            .item {
+                &::before {
+                    display: none;
+                }
+            }
+            &.tabs-side {
+                .tabs {
+                    width: 250px;
+                    float: left;
+                    li {
+                        display: block;
+                    }
+                }
+                .item {
+                    margin-left: 300px;
+                }
+            }
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .pb-108px {
+            padding-bottom: 32px;
+        }
+    }

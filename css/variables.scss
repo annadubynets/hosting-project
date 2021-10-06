@@ -1,0 +1,56 @@
+$black: #20252D;
+$green: #70B997;
+$deepskyblue: #4973EB;
+$yellow: #FFD100;
+$white: #FFFFFF;
+$whitesmoke: #F2F4F9;
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px);
+p {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.font-size-12px {
+    font-size: 12px;
+}
+
+.font-size-14px {
+    font-size: 14px;
+}
+
+.font-size-18px {
+    font-size: 18px;
+}
+
+.font-size-24px {
+    font-size: 24px;
+}
+
+.text-primary {
+    color: $deepskyblue!important;
+}
+
+.text-dark {
+    color: $black!important;
+}
+
+.bg-primary {
+    background-color: $deepskyblue!important;
+}
+
+.pb-108px {
+    padding-bottom: 108px;
+}
+
+.border-bottom {
+    border-bottom: 2px solid rgba(73, 115, 235, 0.17)!important;
+    border-radius: 1px;
+}
+
+.shadow {
+    box-shadow: 0px 20px 40px rgba(73, 115, 235, 0.1)!important;
+}
+
+.rounded {
+    border-radius: 20px!important;
+}
