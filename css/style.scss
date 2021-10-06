@@ -4,9 +4,14 @@
     @import "variables";
     body {
         font-family: 'Poppins';
-        background: url('../images/bg.png');
-        background-repeat: no-repeat;
-        background-size: cover;
+    }
+    
+    main {
+        background: linear-gradient(to top left, $white 50%, $deepskyblue 50%);
+        .container {
+            background: url('../images/bg.svg') center no-repeat;
+            background-size: 100% 100%;
+        }
     }
     
     p {
@@ -100,7 +105,7 @@
     }
     
     iframe {
-        width: 60%;
+        width: 50%;
         min-height: 165px;
     }
     
@@ -137,6 +142,7 @@
     }
     
     .footer {
+        background-color: $white;
         .navbar-nav {
             .nav-item {
                 .nav-link {
@@ -279,10 +285,20 @@
         border-radius: 20px;
         box-shadow: 0px 20px 40px rgba(73, 115, 235, 0.1)!important;
         padding: 50px 60px;
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             background-color: transparent;
             box-shadow: none;
             padding: 0 15px;
+        }
+    }
+    
+    .item-block {
+        @media (max-width: 992px) {
+            background-color: $white;
+            border-radius: 20px;
+            box-shadow: 0px 20px 40px rgba(73, 115, 235, 0.1)!important;
+            padding: 24px 20px;
+            margin-bottom: 8px;
         }
     }
     
@@ -403,6 +419,9 @@
     }
     
     @media (max-width: 768px) {
+        .font-size-18px {
+            font-size: 16px!important;
+        }
         .pb-108px {
             padding-bottom: 32px;
         }
