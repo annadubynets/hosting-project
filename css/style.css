@@ -462,6 +462,11 @@ iframe {
   right: 15px;
   top: 20px;
 }
+@media (min-width: 992px) {
+  .tabbed-content .item::after {
+    display: none;
+  }
+}
 .tabbed-content .item.active .item-content {
   opacity: 1;
   visibility: visible;
