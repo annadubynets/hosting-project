@@ -459,8 +459,8 @@ iframe {
   color: #4973EB;
   font-size: 12px;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 15px;
+  top: 20px;
 }
 .tabbed-content .item.active .item-content {
   opacity: 1;
