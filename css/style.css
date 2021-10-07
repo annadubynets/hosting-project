@@ -55,13 +55,44 @@ p {
 body {
   font-family: "Poppins";
 }
+@media (max-width: 992px) {
+  body {
+    background-color: #4973EB;
+    background-image: url("../images/decor-mobile.svg");
+    background-size: cover;
+  }
+}
 
 main {
-  background: linear-gradient(to top left, #FFFFFF 50%, #4973EB 50%);
+  position: relative;
 }
-main .container {
-  background: url("../images/bg.svg") center no-repeat;
-  background-size: 100% 100%;
+main .base-decor, main .decor-btc, main .decor-message, main .decor-arrow, main .decor, main .bg-decor {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+main .bg-decor {
+  background-color: #4973EB;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%);
+}
+main .decor {
+  background: url("../images/decor.svg") center no-repeat;
+  background-size: cover;
+}
+main .decor-arrow {
+  background: url("../images/decor-arrow.svg") right no-repeat;
+  background-size: contain;
+}
+main .decor-message {
+  background: url("../images/decor-message.svg") right no-repeat;
+  background-size: contain;
+}
+main .decor-btc {
+  background: url("../images/decor-btc.svg") right no-repeat;
+  background-size: contain;
 }
 
 p {
@@ -118,7 +149,7 @@ a {
 @media (max-width: 768px) {
   .navbar-nav .nav-item .nav-link {
     font-size: 14px;
-    padding: 24px 12px;
+    padding: 24px 10px;
   }
 }
 
@@ -325,7 +356,7 @@ iframe {
   box-shadow: 0px 20px 40px rgba(73, 115, 235, 0.1) !important;
   padding: 50px 60px;
 }
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .tabs-wrapper {
     background-color: transparent;
     box-shadow: none !important;

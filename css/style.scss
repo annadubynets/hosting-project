@@ -4,13 +4,47 @@
     @import "variables";
     body {
         font-family: 'Poppins';
+        @media (max-width: 992px) {
+            background-color: $deepskyblue;
+            background-image: url('../images/decor-mobile.svg');
+            background-size: cover;
+        }
     }
     
     main {
-        background: linear-gradient(to top left, $white 50%, $deepskyblue 50%);
-        .container {
-            background: url('../images/bg.svg') center no-repeat;
-            background-size: 100% 100%;
+        position: relative;
+        .base-decor {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        .bg-decor {
+            background-color: $deepskyblue;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%);
+            @extend .base-decor;
+        }
+        .decor {
+            background: url('../images/decor.svg') center no-repeat;
+            background-size: cover;
+            @extend .base-decor;
+        }
+        .decor-arrow {
+            background: url('../images/decor-arrow.svg') right no-repeat;
+            background-size: contain;
+            @extend .base-decor;
+        }
+        .decor-message {
+            background: url('../images/decor-message.svg') right no-repeat;
+            background-size: contain;
+            @extend .base-decor;
+        }
+        .decor-btc {
+            background: url('../images/decor-btc.svg') right no-repeat;
+            background-size: contain;
+            @extend .base-decor;
         }
     }
     
@@ -72,7 +106,7 @@
                 }
                 @media (max-width: 768px) {
                     font-size: 14px;
-                    padding: 24px 12px;
+                    padding: 24px 10px;
                 }
             }
         }
@@ -285,7 +319,7 @@
         border-radius: 20px;
         box-shadow: 0px 20px 40px rgba(73, 115, 235, 0.1)!important;
         padding: 50px 60px;
-        @media (max-width: 992px) {
+        @media (max-width: 768px) {
             background-color: transparent;
             box-shadow: none!important;
             padding: 0 15px;
