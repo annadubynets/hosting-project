@@ -356,7 +356,7 @@ iframe {
   box-shadow: 0px 20px 40px rgba(73, 115, 235, 0.1) !important;
   padding: 50px 60px;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .tabs-wrapper {
     background-color: transparent;
     box-shadow: none !important;
@@ -369,7 +369,7 @@ iframe {
     background-color: #FFFFFF;
     border-radius: 20px;
     box-shadow: 0px 20px 40px rgba(73, 115, 235, 0.1) !important;
-    padding: 24px 20px;
+    padding: 20px;
     margin-bottom: 8px;
   }
 }
@@ -442,6 +442,9 @@ iframe {
 .tabbed-content .tabs {
   display: none;
 }
+.tabbed-content .item {
+  position: relative;
+}
 .tabbed-content .item::before {
   content: attr(data-title);
 }
@@ -450,13 +453,25 @@ iframe {
   visibility: hidden;
   height: 0;
 }
+.tabbed-content .item::after {
+  font-family: "icomoon";
+  content: "";
+  color: #4973EB;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 .tabbed-content .item.active .item-content {
   opacity: 1;
   visibility: visible;
   height: auto;
 }
+.tabbed-content .item.active::after {
+  transform: rotate(180deg);
+}
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 992px) {
   .tabbed-content {
     min-height: 740px;
   }
