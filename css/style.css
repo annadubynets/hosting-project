@@ -328,7 +328,7 @@ iframe {
 @media (max-width: 992px) {
   .tabs-wrapper {
     background-color: transparent;
-    box-shadow: none;
+    box-shadow: none !important;
     padding: 0 15px;
   }
 }
