@@ -435,9 +435,6 @@ iframe {
     padding-top: 0;
   }
 }
-.tabbed-content {
-  min-height: 740px;
-}
 .tabbed-content .tabs {
   display: none;
 }
@@ -458,6 +455,7 @@ iframe {
   position: absolute;
   right: 15px;
   top: 20px;
+  cursor: pointer;
 }
 @media (min-width: 992px) {
   .tabbed-content .item::after {

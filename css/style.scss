@@ -408,7 +408,7 @@
     }
     
     .tabbed-content {
-        min-height: 740px;
+        //min-height: 740px;
         .tabs {
             display: none;
         }
@@ -428,6 +428,7 @@
                 position: absolute;
                 right: 15px;
                 top: 20px;
+                cursor: pointer;
                 @media (min-width: 992px) {
                     display: none;
                 }
