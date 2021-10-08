@@ -369,7 +369,6 @@
     }
     
     .item {
-        margin-bottom: 8px;
         border-radius: 12px;
         background-color: $white;
         &::before {
@@ -419,9 +418,7 @@
                 content: attr(data-title);
             }
             .item-content {
-                opacity: 0;
-                visibility: hidden;
-                height: 0;
+                display: none;
             }
             &::after {
                 font-family: "icomoon";
@@ -437,6 +434,7 @@
             }
             &.active {
                 .item-content {
+                    display: block;
                     opacity: 1;
                     visibility: visible;
                     height: auto;
@@ -481,6 +479,11 @@
     }
     
     @media (max-width: 768px) {
+        .tabbed-content {
+            .item {
+                margin-bottom: 8px;
+            }
+        }
         .font-size-18px {
             font-size: 16px!important;
         }

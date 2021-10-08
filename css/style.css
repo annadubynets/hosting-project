@@ -404,7 +404,6 @@ iframe {
 }
 
 .item {
-  margin-bottom: 8px;
   border-radius: 12px;
   background-color: #FFFFFF;
 }
@@ -449,9 +448,7 @@ iframe {
   content: attr(data-title);
 }
 .tabbed-content .item .item-content {
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
+  display: none;
 }
 .tabbed-content .item::after {
   font-family: "icomoon";
@@ -468,6 +465,7 @@ iframe {
   }
 }
 .tabbed-content .item.active .item-content {
+  display: block;
   opacity: 1;
   visibility: visible;
   height: auto;
@@ -504,6 +502,10 @@ iframe {
   }
 }
 @media (max-width: 768px) {
+  .tabbed-content .item {
+    margin-bottom: 8px;
+  }
+
   .font-size-18px {
     font-size: 16px !important;
   }
